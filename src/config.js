@@ -1,6 +1,6 @@
 let config = {
     resolver: (component) => component,
-    tagName: 'router-content',
+    tagName: 'app-view',
     bus: 'eventBus',
     event: 'error-page'
 };

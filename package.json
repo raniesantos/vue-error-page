@@ -1,7 +1,7 @@
 {
   "name": "vue-error-page",
   "version": "1.0.0",
-  "description": "PACKAGEDESCRIPTION.",
+  "description": "Show error pages with Vue Router without changing the URL.",
   "main": "dist/index.js",
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -39,8 +39,8 @@
     "ajax",
     "async",
     "dynamic",
+    "request",
     "response",
-    "laravel",
     "nuxt"
   ],
   "author": "Ranie Santos",
