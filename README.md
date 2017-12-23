@@ -20,7 +20,11 @@ $ yarn add vue-error-page
 ___
 ## Usage
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem, dolorum.
+### Setup
+
+This package depends on a global event bus in order to emit events that will show the error page. You must first define an event bus on the `window` object. By default it looks for the key `eventBus` but you can configure this to something else.
+
+You must also define a `resolver`. A resolver is a callback function that should return a Vue component and also indicate the directory where the error pages can be found.
 
 ```js
 import ErrorPage from 'vue-error-page';
@@ -34,20 +38,27 @@ Vue.use(ErrorPage, {
 });
 ```
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem, dolorum.
+### Other Options
 
 ```js
 Vue.use(ErrorPage, {
     resolver: (component) => {
         return require('./views/errors/' + component);
-    }
+    },
     tagName: 'app-view',
     bus: 'eventBus',
     event: 'error-page'
 });
 ```
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem, dolorum.
+Option       | Default Value  | Description
+:----------: | :------------: | -----------
+**resolver** | *(cmp) => { return cmp; }* | (Already described above.)
+**tagName**  | *'app-view'*   | The name of the component that wraps `router-view`.
+**bus**      | *'eventBus'*   | The name of the event bus. (Must be defined on `window`.)
+**event**    | *'error-page'* | The name of the event being emitted and listened to.
+
+### Lorem ipsum dolor sit amet.
 
 ```html
 <template>
