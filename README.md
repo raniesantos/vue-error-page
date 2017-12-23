@@ -49,7 +49,7 @@ Vue.use(ErrorPage, {
 });
 ```
 
-### Other Options
+### Other options
 
 ```js
 Vue.use(ErrorPage, {
@@ -69,7 +69,9 @@ Option       | Default Value  | Description
 **bus**      | *'eventBus'*   | The name of the event bus. (Must be defined on `window`.)
 **event**    | *'error-page'* | The name of the event being emitted and listened to.
 
-### Lorem ipsum dolor sit amet.
+### The wrapper component
+
+Then you can swap `router-view` with `app-view` (or whatever name you defined for the wrapper component).
 
 ```html
 <template>
