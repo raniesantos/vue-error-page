@@ -28,7 +28,9 @@ import ErrorPage from 'vue-error-page';
 window.eventBus = new Vue();
 
 Vue.use(ErrorPage, {
-    resolver: (component) => require('./views/errors/' + component)
+    resolver: (component) => {
+        return require('./views/errors/' + component);
+    }
 });
 ```
 
@@ -36,8 +38,10 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem, dolorum.
 
 ```js
 Vue.use(ErrorPage, {
-    resolver: (component) => require('./views/errors/' + component),
-    tagName: 'router-content',
+    resolver: (component) => {
+        return require('./views/errors/' + component);
+    }
+    tagName: 'app-view',
     bus: 'eventBus',
     event: 'error-page'
 });
@@ -50,7 +54,7 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem, dolorum.
     <div>
         <header></header>
         <nav></nav>
-        <router-content></router-content>
+        <app-view></app-view>
         <footer></footer>
     </div>
 </template>
