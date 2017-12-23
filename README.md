@@ -2,11 +2,8 @@
 
 [![Latest Version on NPM](https://img.shields.io/npm/v/vue-error-page.svg?style=flat-square)](https://www.npmjs.com/package/vue-error-page)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
-## (WARNING README INCOMPLETE)
-
-PACKAGEDESCRIPTION.
+Show error pages with Vue Router without changing the URL.
 
 ___
 ## Why?
