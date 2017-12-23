@@ -84,9 +84,11 @@ Then you can swap `router-view` with `app-view` (or whatever name you defined fo
 </template>
 ```
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem, dolorum.
+Finally, you can use the `$_error(code)` method injected into all components. You can call it to display a specific error page. 
 
 Related: [Nuxt.js error() method](https://nuxtjs.org/guide/async-data#handling-errors)
+
+#### Example route
 
 ```js
 {
@@ -94,6 +96,8 @@ Related: [Nuxt.js error() method](https://nuxtjs.org/guide/async-data#handling-e
     component: require('./views/Profile')
 }
 ```
+
+#### Profile.vue
 
 ```js
 axios.get('/profile/' + this.$route.params.username)
