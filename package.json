@@ -39,8 +39,8 @@
     "ajax",
     "async",
     "dynamic",
+    "request",
     "response",
-    "laravel",
     "nuxt"
   ],
   "author": "Ranie Santos",
