@@ -35,7 +35,7 @@ ___
 
 This package depends on a global event bus in order to emit events that will show the error page. You must first define an event bus on the `window` object. By default it looks for the key `eventBus` but you can configure this to something else.
 
-You must also define a `resolver`. A resolver is a callback function that should return a Vue component and also indicate the directory where the error pages can be found.
+You must also define a `resolver`. A resolver is a callback function that should return the error page component and also indicate the directory where the error pages can be found.
 
 ```js
 import ErrorPage from 'vue-error-page';
@@ -71,7 +71,7 @@ Option       | Default Value  | Description
 
 ### The wrapper component
 
-Then you can swap `router-view` with `app-view` (or whatever name you defined for the wrapper component).
+Then you can swap `router-view` with `app-view` (or whatever you defined for `tagName`).
 
 ```html
 <template>
@@ -84,7 +84,7 @@ Then you can swap `router-view` with `app-view` (or whatever name you defined fo
 </template>
 ```
 
-Finally, you can use the `$_error(code)` method injected into all components. You can call it to display a specific error page. 
+Finally, you can use the `$_error(code)` method injected into all components. You can call it to display a specific error page. As a side note, this idea was taken from Nuxt.js.
 
 Related: [Nuxt.js error() method](https://nuxtjs.org/guide/async-data#handling-errors)
 
@@ -97,7 +97,7 @@ Related: [Nuxt.js error() method](https://nuxtjs.org/guide/async-data#handling-e
 }
 ```
 
-#### Profile.vue
+#### views/Profile.vue
 
 ```js
 axios.get('/profile/' + this.$route.params.username)
