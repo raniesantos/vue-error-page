@@ -2,20 +2,7 @@
   "name": "vue-error-page",
   "version": "1.0.1",
   "description": "Show error pages with Vue Router without changing the URL.",
-  "main": "dist/index.js",
-  "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.6.1"
-  },
-  "scripts": {
-    "build": "babel src -d dist",
-    "prepublish": "npm run build"
-  },
-  "babel": {
-    "presets": [
-      "env"
-    ]
-  },
+  "main": "src/index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/raniesantos/vue-error-page.git"
