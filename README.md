@@ -9,6 +9,17 @@
 PACKAGEDESCRIPTION.
 
 ___
+## Why?
+
+Because:
+
+- [Trigger router-view change without changing current URL](https://github.com/vuejs/vue-router/issues/977)
+- [How to load 404 component conditionally](https://forum.vuejs.org/t/how-to-load-404-component-conditionally/7781)
+- [Handling 404's with router](https://laracasts.com/discuss/channels/vue/handling-404s-with-router)
+- [404 after xmlhttprequest](https://forum.vuejs.org/t/404-after-xmlhttprequest/5362)
+- [404 in SPA](https://forum.vuejs.org/t/404-in-spa/9399)
+
+___
 ## Install
 
 You can install this package via yarn (or npm):
