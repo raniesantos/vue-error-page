@@ -84,7 +84,9 @@ Then you can swap `router-view` with `app-view` (or whatever you defined for `ta
 </template>
 ```
 
-Finally, you can use the `$_error(code)` method injected into all components. You can call it to display a specific error page. As a side note, this idea was taken from Nuxt.js.
+### Triggering the error page
+
+Finally, you can use the `$_error()` method injected into all components. You can call it to display a specific error page. As a side note, this idea was taken from Nuxt.js.
 
 Related: [Nuxt.js error() method](https://nuxtjs.org/guide/async-data#handling-errors)
 
@@ -95,6 +97,23 @@ Related: [Nuxt.js error() method](https://nuxtjs.org/guide/async-data#handling-e
     path: '/profile/:username',
     component: require('./views/Profile')
 }
+```
+
+#### views/errors/404.vue
+
+**NOTE:** You can name your error components normally (e.g. `NotFound.vue`), but for convenience you can also name them after status codes.
+
+```html
+<template>
+    <div>
+        <h1>404 Error</h1>
+        <p>The resource you were trying to access could not be found.</p>
+        <router-link to="/" exact>
+            Go to home page
+        </router-link>
+    </div>
+</template>
+
 ```
 
 #### views/Profile.vue
