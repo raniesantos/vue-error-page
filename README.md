@@ -126,6 +126,8 @@ axios.get('/profile/' + this.$route.params.username)
     .catch((error) => {
         if (error.response.status === 404) {
             this.$_error(404);
+            // or like this:
+            // this.$_error('NotFound');
         }
     });
 ```
