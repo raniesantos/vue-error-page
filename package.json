@@ -1,6 +1,6 @@
 {
   "name": "vue-error-page",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Show error pages with Vue Router without changing the URL.",
   "main": "src/index.js",
   "repository": {
