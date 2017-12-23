@@ -1,0 +1,52 @@
+{
+  "name": "vue-error-page",
+  "version": "1.0.0",
+  "description": "PACKAGEDESCRIPTION.",
+  "main": "dist/index.js",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1"
+  },
+  "scripts": {
+    "build": "babel src -d dist",
+    "prepublish": "npm run build"
+  },
+  "babel": {
+    "presets": [
+      "env"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/raniesantos/vue-error-page.git"
+  },
+  "keywords": [
+    "vue",
+    "vuejs",
+    "vue-router",
+    "router",
+    "routing",
+    "route",
+    "routes",
+    "view",
+    "page",
+    "error",
+    "404",
+    "http",
+    "status",
+    "code",
+    "api",
+    "ajax",
+    "async",
+    "dynamic",
+    "response",
+    "laravel",
+    "nuxt"
+  ],
+  "author": "Ranie Santos",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/raniesantos/vue-error-page/issues"
+  },
+  "homepage": "https://github.com/raniesantos/vue-error-page#readme"
+}
