@@ -3,8 +3,7 @@
 [![Latest Version on NPM](https://img.shields.io/npm/v/vue-error-page.svg?style=flat-square)](https://www.npmjs.com/package/vue-error-page)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
 
-Show error pages with Vue Router without changing the URL.
-
+Provides a wrapper for router-view that allows you to show error pages without changing the URL.
 ___
 ## Why?
 
