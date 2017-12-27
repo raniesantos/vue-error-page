@@ -4,6 +4,7 @@
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
 
 Provides a wrapper for router-view that allows you to show error pages without changing the URL.
+
 ___
 ## Why?
 

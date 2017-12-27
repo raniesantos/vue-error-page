@@ -40,13 +40,13 @@
     "poi": "^9.6.6",
     "rimraf": "^2.6.2"
   },
+  "peerDependencies": {
+    "vue": "^2.5.13",
+    "vue-router": "^3.0.1"
+  },
   "scripts": {
     "clean": "rimraf dist/*",
     "build": "npm run clean && poi build src --library",
     "prepublish": "npm run build"
-  },
-  "peerDependencies": {
-    "vue": "^2.5.13",
-    "vue-router": "^3.0.1"
   }
 }
