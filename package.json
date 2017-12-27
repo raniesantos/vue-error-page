@@ -2,7 +2,7 @@
   "name": "vue-error-page",
   "version": "1.0.5",
   "description": "Provides a wrapper for router-view that allows you to show error pages without changing the URL.",
-  "main": "dist/vue-error-page.js",
+  "main": "dist/index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/raniesantos/vue-error-page.git"
@@ -46,7 +46,7 @@
   },
   "scripts": {
     "clean": "rimraf dist/*",
-    "build": "npm run clean && poi build src --library",
+    "build": "npm run clean && poi build src --library --filename.js index.js",
     "prepublish": "npm run build"
   }
 }
