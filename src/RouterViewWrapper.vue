@@ -1,5 +1,5 @@
 <template>
-    <component v-if="code" :is="component"></component>
+    <component v-if="code" :is="code"></component>
     <router-view v-else></router-view>
 </template>
 
@@ -12,14 +12,9 @@ export default {
             code: false
         };
     },
-    computed: {
-        component () {
-            return config.resolver(this.code);
-        }
-    },
     created () {
         window[config.bus].$on(config.event, (code) => {
-            this.code = code;
+            this.code = config.resolver(code);
         });
     },
     watch: {
