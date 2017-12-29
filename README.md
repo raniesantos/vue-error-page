@@ -61,7 +61,7 @@ Vue.use(ErrorPage, {
 
 Option       | Default Value  | Description
 :----------: | :------------: | -----------
-**resolver** | *(cmp) => { return cmp; }* | (Already described above.)
+**resolver** | *(cmp) => { return cmp; }* | (Already described above.) Although this has a default value, *you should still define it* in order to make the package aware of your directory structure and allow it to automatically require components.
 **tagName**  | *'app-view'*   | The name of the component that wraps `router-view`.
 **bus**      | *'eventBus'*   | The name of the event bus. (Must be defined on `window`.)
 **event**    | *'error-page'* | The name of the event being emitted and listened to.
@@ -96,15 +96,13 @@ Related: [Nuxt.js error() method](https://nuxtjs.org/guide/async-data#handling-e
 }
 ```
 
-#### views/errors/404.vue
-
-**NOTE:** You can name your error components normally (e.g. `NotFound.vue`), but for convenience you can also name them after status codes.
+#### views/errors/NotFound.vue
 
 ```html
 <template>
     <div>
         <h1>404 Error</h1>
-        <p>The resource you were trying to access could not be found.</p>
+        <p>The resource could not be found.</p>
         <router-link to="/" exact>
             Go to home page
         </router-link>
@@ -122,12 +120,12 @@ axios.get('/profile/' + this.$route.params.username)
     })
     .catch((error) => {
         if (error.response.status === 404) {
-            this.$_error(404);
-            // or like this:
-            // this.$_error('NotFound');
+            this.$_error('NotFound');
         }
     });
 ```
+
+Alternatively, you can name your error components after status codes like this `404.vue` so that you can trigger error pages like this `this.$_error(404)`.
 
 ___
 ## License
