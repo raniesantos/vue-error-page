@@ -1,5 +1,5 @@
 <template>
-    <component v-if="code" :is="code" :payload="payload"></component>
+    <component v-if="component" :is="component" :payload="payload"></component>
     <router-view v-else></router-view>
 </template>
 
@@ -9,19 +9,19 @@ import config from './config';
 export default {
     data () {
         return {
-            code: false,
+            component: false,
             payload: null
         };
     },
     created () {
-        window[config.bus].$on(config.event, (code, payload) => {
-            this.code = config.resolver(code);
+        window[config.bus].$on(config.event, (component, payload) => {
+            this.component = config.resolver(component);
             this.payload = payload;
         });
     },
     watch: {
         '$route' () {
-            this.code = false;
+            this.component = false;
         }
     }
 };
