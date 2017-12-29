@@ -2,8 +2,8 @@ import config from './config';
 
 export default {
     methods: {
-        $_error (code) {
-            window[config.bus].$emit(config.event, code);
+        $_error (code, payload) {
+            window[config.bus].$emit(config.event, code, payload);
         }
     }
 };
