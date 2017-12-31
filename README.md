@@ -108,7 +108,6 @@ Related: [Nuxt.js error() method](https://nuxtjs.org/guide/async-data#handling-e
         </router-link>
     </div>
 </template>
-
 ```
 
 #### views/Profile.vue
@@ -126,6 +125,36 @@ axios.get('/profile/' + this.$route.params.username)
 ```
 
 Alternatively, you can name your error components after status codes like this `404.vue` so that you can trigger error pages like this `this.$_error(404)`.
+
+### Passing additional data to the error page
+
+You can pass a *payload* as an additional argument to `$_error()`.
+
+```js
+this.$_error(404, {
+    username: this.$route.params.username
+});
+```
+
+The payload will be available as a prop in the component.
+
+```html
+<template>
+    <div>
+        <h1>404 Error</h1>
+        <p>User {{ payload.username }} not found.</p>
+        <router-link to="/" exact>
+            Go to home page
+        </router-link>
+    </div>
+</template>
+
+<script>
+export default {
+    props: ['payload']
+};
+</script>
+```
 
 ___
 ## License
