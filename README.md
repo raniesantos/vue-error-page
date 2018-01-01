@@ -35,6 +35,7 @@ This package depends on a global event bus in order to emit events that will sho
 You must also define a `resolver`. A resolver is a callback function that should return the error page component and also indicate the directory where the error pages can be found.
 
 ```js
+import Vue from 'vue';
 import ErrorPage from 'vue-error-page';
 
 window.eventBus = new Vue();
