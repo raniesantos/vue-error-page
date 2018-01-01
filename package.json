@@ -46,7 +46,8 @@
   },
   "scripts": {
     "clean": "rimraf dist/*",
-    "build": "npm run clean && poi build src --library --filename.js index.js",
+    "poi": "poi build src --library --filename.js index.js",
+    "build": "npm run clean && npm run poi",
     "prepublish": "npm run build"
   }
 }
