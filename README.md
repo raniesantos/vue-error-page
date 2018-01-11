@@ -2,6 +2,7 @@
 
 [![Latest Version on NPM](https://img.shields.io/npm/v/vue-error-page.svg?style=flat-square)](https://www.npmjs.com/package/vue-error-page)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
+[![donate](https://img.shields.io/badge/$-donate-ff5f5f.svg?style=flat-square)](https://ko-fi.com/raniesantos)
 
 Provides a wrapper for router-view that allows you to show error pages without changing the URL.
 
@@ -42,7 +43,7 @@ window.eventBus = new Vue();
 
 Vue.use(ErrorPage, {
     resolver: (component) => {
-        return require('./views/errors/' + component);
+        return require('./views/Errors/' + component);
     }
 });
 ```
@@ -97,7 +98,7 @@ Related: [Nuxt.js error() method](https://nuxtjs.org/guide/async-data#handling-e
 }
 ```
 
-#### views/errors/NotFound.vue
+#### views/Errors/NotFound.vue
 
 ```html
 <template>
