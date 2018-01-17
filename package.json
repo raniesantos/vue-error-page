@@ -53,7 +53,7 @@
     "vue-router": "^3.0.1"
   },
   "scripts": {
-    "lint": "eslint --fix src",
+    "lint": "eslint --ext .js,.vue src",
     "clean": "rimraf dist/*",
     "poi": "poi build src --library --filename.js index.js",
     "build": "npm run clean && npm run poi",
