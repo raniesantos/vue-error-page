@@ -2,7 +2,9 @@
 
 [![Latest Version on NPM](https://img.shields.io/npm/v/vue-error-page.svg?style=flat-square)](https://www.npmjs.com/package/vue-error-page)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 [![donate](https://img.shields.io/badge/$-donate-ff5f5f.svg?style=flat-square)](https://ko-fi.com/raniesantos)
+[![chat](https://img.shields.io/badge/chat-discord-7289DA.svg?style=flat-square)](https://discord.gg/8e5sUU6)
 
 Provides a wrapper for router-view that allows you to show error pages without changing the URL.
 
@@ -157,6 +159,11 @@ export default {
 };
 </script>
 ```
+
+___
+## Contributing
+
+Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
 ___
 ## License
