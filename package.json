@@ -1,6 +1,6 @@
 {
   "name": "vue-error-page",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "description": "Provides a wrapper for router-view that allows you to show error pages without changing the URL.",
   "main": "dist/index.js",
   "repository": {

@@ -45,7 +45,7 @@ window.eventBus = new Vue();
 
 Vue.use(ErrorPage, {
     resolver: (component) => {
-        return require('./views/Errors/' + component);
+        return require('./views/Errors/' + component).default;
     }
 });
 ```
@@ -87,16 +87,14 @@ Then you can swap `router-view` with `app-view` (or whatever you defined for `ta
 
 ### Triggering the error page
 
-Finally, you can use the `$_error()` method injected into all components. You can call it to display a specific error page. As a side note, this idea was taken from Nuxt.js.
-
-Related: [Nuxt.js error() method](https://nuxtjs.org/guide/async-data#handling-errors)
+Finally, you can use the `$_error()` method injected into all components. You can call it to display a specific error page.
 
 #### Example route
 
 ```js
 {
     path: '/profile/:username',
-    component: require('./views/Profile')
+    component: require('./views/Profile').default
 }
 ```
 
