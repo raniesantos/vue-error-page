@@ -33,9 +33,7 @@ ___
 
 ### Setup
 
-This package depends on a global event bus in order to emit events that will show the error page. You must first define an event bus on the `window` object. By default it looks for the key `eventBus` but you can configure this to something else.
-
-You must also define a `resolver`. A resolver is a callback function that should return the error page component and also indicate the directory where the error pages can be found.
+This package depends on a global event bus in order to emit events that will show the error page. You must first define an event bus on the `window` object. By default it looks for the `eventBus` key but you can configure this to use a different key.
 
 ```js
 import Vue from 'vue';
@@ -43,32 +41,28 @@ import ErrorPage from 'vue-error-page';
 
 window.eventBus = new Vue();
 
+Vue.use(ErrorPage);
+```
+
+### Options
+
+```js
 Vue.use(ErrorPage, {
+    tagName: 'app-view',
+    bus: 'eventBus',
+    event: 'error-page',
     resolver: (component) => {
         return require('./views/Errors/' + component).default;
     }
 });
 ```
 
-### Other options
-
-```js
-Vue.use(ErrorPage, {
-    resolver: (component) => {
-        return component;
-    },
-    tagName: 'app-view',
-    bus: 'eventBus',
-    event: 'error-page'
-});
-```
-
 Option       | Default Value  | Description
 :----------: | :------------: | -----------
-**resolver** | *(component) => { return component; }* | (Already described above.) Although this has a default value, *you should still define it* in order to make the package aware of your directory structure and allow it to automatically require components.
 **tagName**  | *'app-view'*   | The name of the component that wraps `router-view`.
 **bus**      | *'eventBus'*   | The name of the event bus. (Must be defined on `window`.)
 **event**    | *'error-page'* | The name of the event being emitted and listened to.
+**resolver** | *(component) => { return component; }* | This is essentially just a shortcut for importing the component. **This will not work with SSR**.
 
 ### The wrapper component
 
@@ -115,18 +109,22 @@ Finally, you can use the `$_error()` method injected into all components. You ca
 #### views/Profile.vue
 
 ```js
+import NotFound from './views/Errors/NotFound';
+
 axios.get('/profile/' + this.$route.params.username)
     .then((response) => {
         // user was found
     })
     .catch((error) => {
         if (error.response.status === 404) {
-            this.$_error('NotFound');
+            this.$_error(NotFound);
         }
     });
 ```
 
-Alternatively, you can name your error components after status codes like this `404.vue` so that you can trigger error pages like this `this.$_error(404)`.
+If you decided to define a resolver, you can directly specify the filename of the component like this `this.$_error('NotFound')`.
+
+Additionally, if you name your error components after status codes like this `404.vue`, you can trigger error pages like this `this.$_error(404)`.
 
 ### Passing additional data to the error page
 
