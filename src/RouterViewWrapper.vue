@@ -1,6 +1,6 @@
 <template>
     <component v-if="component" :is="component" :payload="payload"/>
-    <router-view v-else/>
+    <router-view v-bind="$attrs" v-else/>
 </template>
 
 <script>
